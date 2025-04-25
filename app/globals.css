@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  div {
+    font-family: "Comic Neue", cursive;
+  }
+
+  button,
+  a.btn,
+  .font-code {
+    @apply font-jetbrains;
+  }
+}
+
+/* Comic/Manga Style Customizations */
+.rounded-lg {
+  border-radius: 0 !important;
+}
+
+.rounded-md {
+  border-radius: 0 !important;
+}
+
+.rounded-full {
+  border-radius: 0 !important;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+}
+
+/* Sharp corners for all UI elements */
+* {
+  border-radius: 0 !important;
+}
+
+/* Hover effect with sharp black drop shadow */
+.hover-pop {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-pop:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Add these new hover effect classes */
+.hover-green {
+  transition: all 0.3s ease;
+}
+
+.hover-green:hover {
+  background-color: #10b981;
+  border-color: #059669;
+  color: white;
+}
+
+.hover-purple {
+  transition: all 0.3s ease;
+}
+
+.hover-purple:hover {
+  background-color: #8b5cf6;
+  border-color: #7c3aed;
+  color: white;
+}
+
+.hover-blue {
+  transition: all 0.3s ease;
+}
+
+.hover-blue:hover {
+  background-color: #3b82f6;
+  border-color: #2563eb;
+  color: white;
+}
+
+/* Text hover colors */
+.hover-text-green:hover {
+  color: #10b981;
+}
+
+.hover-text-purple:hover {
+  color: #8b5cf6;
+}
+
+.hover-text-blue:hover {
+  color: #3b82f6;
+}
+
+.hover-text-white:hover {
+  color: white;
+}
+
+/* Comic speech bubble */
+.speech-bubble {
+  position: relative;
+  background: white;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px;
+  max-width: 300px;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: black;
+  border-bottom: 0;
+  margin-left: -20px;
+}
+
+/* Comic panel styles */
+.comic-panel {
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.comic-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at center, transparent 0%, transparent 70%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* Comic panel hover effects */
+.comic-panel.hover-panel-green:hover {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+}
+
+.comic-panel.hover-panel-purple:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: #8b5cf6;
+}
+
+.comic-panel.hover-panel-blue:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+/* Speech bubble hover effects */
+.speech-bubble.hover-bubble-green:hover {
+  background-color: #10b981;
+  color: white;
+}
+
+.speech-bubble.hover-bubble-green:hover:after {
+  border-top-color: #10b981;
+}
+
+.speech-bubble.hover-bubble-purple:hover {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+.speech-bubble.hover-bubble-purple:hover:after {
+  border-top-color: #8b5cf6;
+}
+
+.speech-bubble.hover-bubble-blue:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.speech-bubble.hover-bubble-blue:hover:after {
+  border-top-color: #3b82f6;
+}
+
+.font-comic {
+  font-family: "Comic Neue", cursive;
+}
+
+.font-jetbrains {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Comic text box */
+.comic-text-box {
+  background: white;
+  border: 2px solid black;
+  padding: 10px 15px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Comic text box hover effects */
+.comic-text-box.hover-box-green:hover {
+  background-color: #10b981;
+  border-color: #059669;
+  color: white;
+}
+
+.comic-text-box.hover-box-purple:hover {
+  background-color: #8b5cf6;
+  border-color: #7c3aed;
+  color: white;
+}
+
+.comic-text-box.hover-box-blue:hover {
+  background-color: #3b82f6;
+  border-color: #2563eb;
+  color: white;
+}
+
+/* Comic image hover effects */
+.comic-image {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.comic-image-purple:hover {
+  filter: grayscale(0%) hue-rotate(270deg) saturate(1.5);
+}
+
+.comic-image-blue:hover {
+  filter: grayscale(0%) hue-rotate(180deg) saturate(1.5);
+}
+
+.comic-image-green:hover {
+  filter: grayscale(0%) hue-rotate(90deg) saturate(1.5);
+}
+
+/* Comic action lines */
+.action-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.1) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Comic diamond shape */
+.comic-diamond {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid black;
+  transform: rotate(45deg);
+}
+
+/* Comic triangle shape */
+.comic-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: #ffd700;
+  z-index: 5;
+}
